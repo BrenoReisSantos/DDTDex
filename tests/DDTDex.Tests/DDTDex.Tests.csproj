@@ -21,4 +21,9 @@
         </PackageReference>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\src\DDTDex\DDTDex.csproj" />
+      <ProjectReference Include="..\DDTDex.Tests.Common\DDTDex.Tests.Common.csproj" />
+    </ItemGroup>
+
 </Project>

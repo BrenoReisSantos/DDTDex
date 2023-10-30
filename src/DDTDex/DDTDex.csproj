@@ -7,4 +7,9 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="FFMpegCore" Version="5.1.0" />
+      <PackageReference Include="YoutubeExplode" Version="6.3.6" />
+    </ItemGroup>
+
 </Project>
