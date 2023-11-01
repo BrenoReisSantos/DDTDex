@@ -16,11 +16,12 @@ public class YoutubeClientProxy : IYoutubeClientProxy
         {
             VideoDuration = video.Duration,
             VideoName = video.Title,
+            VideoId = video.Id.Value,
             VideoUrl = video.Url
         };
     }
 
-    public async Task<IEnumerable<VideoData>> GetPlaylistVideo(string playlistUrl)
+    public async Task<IEnumerable<VideoData>> GetPlaylistVideosAsync(string playlistUrl)
     {
         var playlistVideos = await _youtubeClient.Playlists.GetVideosAsync(playlistUrl);
 
@@ -31,6 +32,7 @@ public class YoutubeClientProxy : IYoutubeClientProxy
             {
                 VideoDuration = video.Duration,
                 VideoName = video.Title,
+                VideoId = video.Id.Value,
                 VideoUrl = video.Url
             });
         }
@@ -38,12 +40,15 @@ public class YoutubeClientProxy : IYoutubeClientProxy
         return videosData;
     }
 
-
     public async Task DownloadVideoIn720P(string videoUrl, string fileName, string outputPath)
     {
         var streamManifest = await _youtubeClient.Videos.Streams.GetManifestAsync(videoUrl);
-        var streamWith720pQuality = streamManifest.GetMuxedStreams().Where(s => s.VideoQuality.Label == "720p")
+        var streamWith720PQuality = streamManifest.GetMuxedStreams().Where(s => s.VideoQuality.Label == "720p")
             .GetWithHighestVideoQuality();
-        await _youtubeClient.Videos.Streams.DownloadAsync(streamWith720pQuality, $"{outputPath}/{fileName}.mp4");
+
+        if (!Directory.Exists(outputPath))
+            Directory.CreateDirectory(outputPath);
+
+        await _youtubeClient.Videos.Streams.DownloadAsync(streamWith720PQuality, $"{outputPath}/{fileName}.mp4");
     }
 }
