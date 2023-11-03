@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDTDex.Tests", "tests\DDTDe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDTDex.Tests.Common", "tests\DDTDex.Tests.Common\DDTDex.Tests.Common.csproj", "{DCAE6A8C-D002-4871-9C64-D192B6D9EF73}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PergunteAoPastorML", "src\PergunteAoPastorML\PergunteAoPastorML.csproj", "{20188F0F-9194-40A7-AF15-045BB1830CA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{DCAE6A8C-D002-4871-9C64-D192B6D9EF73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCAE6A8C-D002-4871-9C64-D192B6D9EF73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCAE6A8C-D002-4871-9C64-D192B6D9EF73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20188F0F-9194-40A7-AF15-045BB1830CA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20188F0F-9194-40A7-AF15-045BB1830CA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20188F0F-9194-40A7-AF15-045BB1830CA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20188F0F-9194-40A7-AF15-045BB1830CA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
